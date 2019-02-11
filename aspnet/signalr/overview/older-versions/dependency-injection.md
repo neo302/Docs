@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/older-versions/dependency-injection
 title: "Dependency Injection in SignalR 1.x | Microsoft Docs"
-author: MikeWasson
+author: bradygaster
 description: ""
-ms.author: riande
+ms.author: bradyg
 ms.date: 05/15/2013
 ms.assetid: eaa206c4-edb3-487e-8fcb-54a3261fed36
 msc.legacyurl: /signalr/overview/older-versions/dependency-injection
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 Dependency Injection in SignalR 1.x
 ====================
 by [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 Dependency injection is a way to remove hard-coded dependencies between objects, making it easier to replace an object's dependencies, either for testing (using mock objects) or to change run-time behavior. This tutorial shows how to perform dependency injection on SignalR hubs. It also shows how to use IoC containers with SignalR. An IoC container is a general framework for dependency injection.
 

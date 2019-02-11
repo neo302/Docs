@@ -4,7 +4,7 @@ author: rick-anderson
 description: This tutorial shows how to handle conflicts when multiple users update the same entity at the same time.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 12/07/2018
 uid: data/ef-rp/concurrency
 ---
 # Razor Pages with EF Core in ASP.NET Core - Concurrency - 8 of 8
@@ -196,7 +196,7 @@ The following code gets the client values (the values posted to this method) and
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_try&highlight=9,18)]
 
-The follwing code adds a custom error message for each column that has DB values different from what was posted to `OnPostAsync`:
+The following code adds a custom error message for each column that has DB values different from what was posted to `OnPostAsync`:
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_err)]
 
@@ -265,7 +265,7 @@ The Delete page detects concurrency conflicts when the entity has changed after 
 
 Update *Pages/Departments/Delete.cshtml* with the following code:
 
-[!code-html[](intro/samples/cu/Pages/Departments/Delete.cshtml?highlight=1,10,36,51)]
+[!code-html[](intro/samples/cu/Pages/Departments/Delete.cshtml?highlight=1,10,39,51)]
 
 
 The preceding markup makes the following changes:

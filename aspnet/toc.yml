@@ -1,3 +1,5 @@
+- name: ASP.NET documentation
+  href: /aspnet/#pivot=aspnet
 - name: ASP.NET overview
   href: overview.md
 - name: Tutorials
@@ -2093,7 +2095,7 @@
             - name: Getting Started with EF 6 using MVC 5
               href: mvc/overview/getting-started/getting-started-with-ef-using-mvc/index.md
               items: 
-                - name: Creating an Entity Framework Data Model
+                - name: Create an Entity Framework Data Model
                   href: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md
                 - name: Implementing Basic CRUD Functionality
                   href: mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md
@@ -2132,8 +2134,6 @@
                   href: mvc/overview/getting-started/database-first-development/customizing-a-view.md
                 - name: Enhancing Data Validation
                   href: mvc/overview/getting-started/database-first-development/enhancing-data-validation.md
-                - name: Publish to Azure
-                  href: mvc/overview/getting-started/database-first-development/publish-to-azure.md
             - name: Lifecycle of an ASP.NET MVC 5 Application
               href: mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application.md
             - name: MVC Recommended Resources
@@ -3207,13 +3207,13 @@
               href: signalr/overview/getting-started/introduction-to-signalr.md
             - name: Supported Platforms
               href: signalr/overview/getting-started/supported-platforms.md
-            - name: "Tutorial: Getting Started with SignalR 2"
+            - name: "Real-time chat with SignalR 2"
               href: signalr/overview/getting-started/tutorial-getting-started-with-signalr.md
-            - name: "Tutorial: Getting Started with SignalR 2 and MVC 5"
+            - name: "Real-time chat with SignalR 2 and MVC 5"
               href: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md
-            - name: "Tutorial: High-Frequency Realtime with SignalR 2"
+            - name: "High-frequency real-time with SignalR 2"
               href: signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md
-            - name: "Tutorial: Server Broadcast with SignalR 2"
+            - name: "Server Broadcast with SignalR 2"
               href: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr.md
             - name: "Hands On Lab: Real-Time Web Applications with SignalR"
               href: signalr/overview/getting-started/real-time-web-applications-with-signalr.md
@@ -3257,6 +3257,8 @@
               href: signalr/overview/performance/signalr-performance.md
             - name: Introduction to Scaleout in SignalR
               href: signalr/overview/performance/scaleout-in-signalr.md
+            - name: Azure SignalR Service
+              href: /azure/azure-signalr/signalr-overview
             - name: SignalR Scaleout with Azure Service Bus
               href: signalr/overview/performance/scaleout-with-windows-azure-service-bus.md
             - name: SignalR Scaleout with Redis
@@ -3397,7 +3399,7 @@
   href: visual-studio/overview/2017/index.md
   items: 
     - name: Optimize build performance for solution
-      href: xref:visual-studio/overview/2017/optimize-build-perf
+      href: visual-studio/overview/2017/optimize-build-perf.md
 - name: Visual Studio 2013
   href: visual-studio/overview/2013/index.md
   items: 

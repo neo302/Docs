@@ -3,7 +3,7 @@ title: Adding a View to an MVC app
 author: Rick-Anderson
 description: Adding a view to an MVC app
 ms.author: riande
-ms.date: 09/1721/2017
+ms.date: 01/23/2019
 uid: mvc/overview/getting-started/introduction/adding-a-view
 ---
 Adding a View
@@ -16,7 +16,7 @@ In this section you're going to modify the `HelloWorldController` class to use v
 
 You'll create a view template file using the [Razor view engine](../../../../web-pages/overview/getting-started/introducing-razor-syntax-c.md). Razor-based view templates have a *.cshtml* file extension, and provide an elegant way to create HTML output using C#. Razor minimizes the number of characters and keystrokes required when writing a view template, and enables a fast, fluid coding workflow.
 
-Currently the `Index` method returns a string with a message that is hard-coded in the controller class. Change the `Index` method to return a `View` object, as shown in the following code:
+Currently the `Index` method returns a string with a message that is hard-coded in the controller class. Change the `Index` method to call the controllers [View](/dotnet/api/microsoft.aspnetcore.mvc.controller.view#Microsoft_AspNetCore_Mvc_Controller_View) method, as shown in the following code:
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs?highlight=1,3)]
 
@@ -54,7 +54,7 @@ Alternatively, run the application and browse to the `HelloWorld` controller (`h
 
 ![](adding-a-view/_static/image6.png)
 
-Looks pretty good. However, notice that the browser's title bar shows &quot;Index - My ASP.NET Appli" and the big link on the top of the page says "Application name." Depending on how small you make your browser window, you might need to click the three bars in the upper right to see the to the **Home**, **About**, **Contact**, **Register** and **Log in** links.
+Looks pretty good. However, notice that the browser's title bar shows "Index - My ASP.NET Application," and the big link at the top of the page says "Application name." Depending on how small you make your browser window, you might need to click the three bars in the upper right to see the to the **Home**, **About**, **Contact**, **Register** and **Log in** links.
 
 ## Changing Views and Layout Pages
 

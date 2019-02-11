@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/performance/scaleout-with-windows-azure-service-bus
 title: "SignalR Scaleout with Azure Service Bus | Microsoft Docs"
-author: MikeWasson
+author: bradygaster
 description: "Software versions used in this topic Visual Studio 2013 .NET 4.5 SignalR version 2 Previous versions of this topic For the SignalR 1.x version of this topic,..."
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: ce1305f9-30fd-49e3-bf38-d0a78dfb06c3
 msc.legacyurl: /signalr/overview/performance/scaleout-with-windows-azure-service-bus
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 SignalR Scaleout with Azure Service Bus
 ====================
 by [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 In this tutorial, you will deploy a SignalR application to a Windows Azure Web Role, using the Service Bus backplane to distribute messages to each role instance. (You can also use the Service Bus backplane with [web apps in Azure App Service](https://docs.microsoft.com/azure/app-service-web/).)
 

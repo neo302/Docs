@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/older-versions/introduction-to-security
 title: "Introduction to SignalR Security (SignalR 1.x) | Microsoft Docs"
-author: pfletcher
+author: bradygaster
 description: "Describes the security issues you must consider when developing a SignalR application."
-ms.author: riande
+ms.author: bradyg
 ms.date: 10/17/2013
 ms.assetid: 715a4059-d307-4631-abbb-c789c95d6eb4
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 Introduction to SignalR Security (SignalR 1.x)
 ====================
 by [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > This article describes the security issues you must consider when developing a SignalR application.
 

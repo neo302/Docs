@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/deployment/tutorial-signalr-self-host
 title: "Tutorial: SignalR Self-Host | Microsoft Docs"
-author: pfletcher
+author: bradygaster
 description: "This tutorial shows how to create a self-hosted SignalR 2 server, and how to connect to it with a JavaScript client. Software versions used in the tutorial V..."
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: 400db427-27af-4f2f-abf0-5486d5e024b5
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 Tutorial: SignalR Self-Host
 ====================
 by [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 [Download Completed Project](http://code.msdn.microsoft.com/SignalR-Self-Host-Sample-6da0f383)
 

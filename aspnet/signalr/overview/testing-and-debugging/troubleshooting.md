@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/testing-and-debugging/troubleshooting
 title: "SignalR Troubleshooting | Microsoft Docs"
-author: pfletcher
+author: bradygaster
 description: "This article describes common issues with developing SignalR applications."
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: 4b559e6c-4fb0-4a04-9812-45cf08ae5779
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 SignalR Troubleshooting
 ====================
 by [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > This document describes common troubleshooting issues with SignalR.
 >

@@ -1,11 +1,10 @@
 ---
 title: Get started with ASP.NET Core SignalR
-author: tdykstra
+author: bradygaster
 description: In this tutorial, you create a chat app that uses ASP.NET Core SignalR.
-monikerRange: '>= aspnetcore-2.1'
-ms.author: tdykstra
+ms.author: bradyg
 ms.custom: mvc
-ms.date: 08/31/2018
+ms.date: 11/30/2018
 uid: tutorials/signalr
 
 # Customer intent: As a developer, I want to get a quick proof-of-concept app running, so I can get a practical introduction to ASP.NET Core SignalR.
@@ -28,25 +27,7 @@ At the end, you'll have a working chat app:
 
 [View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample) ([how to download](xref:index#how-to-download-a-sample)).
 
-## Prerequisites
-
-# [Visual Studio](#tab/visual-studio)
-
-* [Visual Studio 2017 version 15.8 or later](https://www.visualstudio.com/downloads/) with the **ASP.NET and web development** workload
-* [.NET Core SDK 2.1 or later](https://www.microsoft.com/net/download/all)
-
-# [Visual Studio Code](#tab/visual-studio-code)
-
-* [Visual Studio Code](https://code.visualstudio.com/download)
-* [.NET Core SDK 2.1 or later](https://www.microsoft.com/net/download/all)
-* [C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-
-# [Visual Studio for Mac](#tab/visual-studio-mac)
-
-* [Visual Studio for Mac version 7.5.4 or later](https://www.visualstudio.com/downloads/)
-* [.NET Core SDK 2.1 or later](https://www.microsoft.com/net/download/all) (included in the Visual Studio install)
-
----
+[!INCLUDE [|Prerequisites](~/includes/net-core-prereqs-all-2.2.md)]
 
 ## Create a web project
 
@@ -60,7 +41,7 @@ At the end, you'll have a working chat app:
 
 * Select **Web Application** to create a project that uses Razor Pages.
 
-* Select a target framework of **.NET Core**, select **ASP.NET Core 2.1**, and click **OK**.
+* Select a target framework of **.NET Core**, select **ASP.NET Core 2.2**, and click **OK**.
 
   ![New Project dialog in Visual Studio](signalr/_static/signalr-new-project-choose-type.png)
 
@@ -179,7 +160,7 @@ A *hub* is a class that serves as a high-level pipeline that handles client-serv
 
   The `ChatHub` class inherits from the SignalR `Hub` class. The `Hub` class manages connections, groups, and messaging.
 
-  The `SendMessage` method can be called by any connected client. It sends the received message to all clients. SignalR code is asynchronous to provide maximum scalability.
+  The `SendMessage` method can be called by a connected client to send a message to all clients. JavaScript client code that calls the method is shown later in the tutorial. SignalR code is asynchronous to provide maximum scalability.
 
 ## Configure SignalR
 
@@ -224,7 +205,7 @@ The SignalR server must be configured to pass SignalR requests to SignalR.
 * In the integrated terminal, run the following command:
 
   ```console
-  dotnet run -p SignalRChat
+  dotnet run -p SignalRChat.csproj
   ```
   
 # [Visual Studio for Mac](#tab/visual-studio-mac)
@@ -235,7 +216,7 @@ The SignalR server must be configured to pass SignalR requests to SignalR.
 
 * Copy the URL from the address bar, open another browser instance or tab, and paste the URL in the address bar.
 
-* Choose either browser, enter a name and message, and select the **Send** button.
+* Choose either browser, enter a name and message, and select the **Send Message** button.
 
   The name and message are displayed on both pages instantly.
 

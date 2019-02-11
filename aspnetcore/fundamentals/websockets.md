@@ -5,7 +5,7 @@ description: Learn how to get started with WebSockets in ASP.NET Core.
 monikerRange: '>= aspnetcore-1.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/28/2018
+ms.date: 01/17/2019
 uid: fundamentals/websockets
 ---
 # WebSockets support in ASP.NET Core
@@ -66,10 +66,24 @@ Add the WebSockets middleware in the `Configure` method of the `Startup` class:
 
 ::: moniker-end
 
+::: moniker range="< aspnetcore-2.2"
+
 The following settings can be configured:
 
-* `KeepAliveInterval` - How frequently to send "ping" frames to the client to ensure proxies keep the connection open.
-* `ReceiveBufferSize` - The size of the buffer used to receive data. Advanced users may need to change this for performance tuning based on the size of the data.
+* `KeepAliveInterval` - How frequently to send "ping" frames to the client to ensure proxies keep the connection open. The default is two minutes.
+* `ReceiveBufferSize` - The size of the buffer used to receive data. Advanced users may need to change this for performance tuning based on the size of the data. The default is 4 KB.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+The following settings can be configured:
+
+* `KeepAliveInterval` - How frequently to send "ping" frames to the client to ensure proxies keep the connection open. The default is two minutes.
+* `ReceiveBufferSize` - The size of the buffer used to receive data. Advanced users may need to change this for performance tuning based on the size of the data. The default is 4 KB.
+* `AllowedOrigins` - A list of allowed Origin header values for WebSocket requests. By default, all origins are allowed. See "WebSocket origin restriction" below for details.
+
+::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -122,6 +136,32 @@ The code shown earlier that accepts the WebSocket request passes the `WebSocket`
 ::: moniker-end
 
 When accepting the WebSocket connection before beginning the loop, the middleware pipeline ends. Upon closing the socket, the pipeline unwinds. That is, the request stops moving forward in the pipeline when the WebSocket is accepted. When the loop is finished and the socket is closed, the request proceeds back up the pipeline.
+
+::: moniker range=">= aspnetcore-2.2"
+
+### Handle client disconnects
+
+The server is not automatically informed when the client disconnects due to loss of connectivity. The server receives a disconnect message only if the client sends it, which can't be done if the internet connection is lost. If you want to take some action when that happens, set a timeout after nothing is received from the client within a certain time window.
+
+If the client isn't always sending messages and you don't want to timeout just because the connection goes idle, have the client use a timer to send a ping message every X seconds. On the server, if a message hasn't arrived within 2\*X seconds after the previous one, terminate the connection and report that the client disconnected. Wait for twice the expected time interval to leave extra time for network delays that might hold up the ping message.
+
+### WebSocket origin restriction
+
+The protections provided by CORS don't apply to WebSockets. Browsers do **not**:
+
+* Perform CORS pre-flight requests.
+* Respect the restrictions specified in `Access-Control` headers when making WebSocket requests.
+
+However, browsers do send the `Origin` header when issuing WebSocket requests. Applications should be configured to validate these headers to ensure that only WebSockets coming from the expected origins are allowed.
+
+If you're hosting your server on "https://server.com" and hosting your client on "https://client.com", add "https://client.com" to the `AllowedOrigins` list for WebSockets to verify.
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptionsAO&highlight=6-7)]
+
+> [!NOTE]
+> The `Origin` header is controlled by the client and, like the `Referer` header, can be faked. Do **not** use these headers as an authentication mechanism.
+
+::: moniker-end
 
 ## IIS/IIS Express support
 

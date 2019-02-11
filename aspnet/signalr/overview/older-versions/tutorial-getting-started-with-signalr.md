@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr
 title: "Tutorial: Getting Started with SignalR 1.x | Microsoft Docs"
-author: pfletcher
+author: bradygaster
 description: "Use ASP.NET SignalR to build a real-time chat application in an HTML page."
-ms.author: riande
+ms.author: bradyg
 ms.date: 02/18/2013
 ms.assetid: fdc3599a-5217-44c1-951f-0eec9812dce7
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 Tutorial: Getting Started with SignalR 1.x
 ====================
 by [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://github.com/timlt)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > This tutorial shows how to use SignalR to create a real-time chat application. You will add SignalR to an empty ASP.NET web application and create an HTML page to send and display messages.
 

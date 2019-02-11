@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/older-versions/signalr-performance
 title: "SignalR Performance (SignalR 1.x) | Microsoft Docs"
-author: pfletcher
+author: bradygaster
 description: "SignalR Performance"
-ms.author: riande
+ms.author: bradyg
 ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 SignalR Performance (SignalR 1.x)
 ====================
 by [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > This topic describes how to design for, measure, and improve performance in a SignalR application.
 

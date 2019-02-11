@@ -4,7 +4,7 @@ author: rick-anderson
 description: Learn how to setup Nginx as a reverse proxy on Ubuntu 16.04 to forward HTTP traffic to an ASP.NET Core web app running on Kestrel.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/23/2018
+ms.date: 12/20/2018
 uid: host-and-deploy/linux-nginx
 ---
 # Host ASP.NET Core on Linux with Nginx
@@ -62,7 +62,7 @@ A reverse proxy is a common setup for serving dynamic web apps. A reverse proxy 
 
 ### Use a reverse proxy server
 
-Kestrel is great for serving dynamic content from ASP.NET Core. However, the web serving capabilities aren't as feature rich as servers such as IIS, Apache, or Nginx. A reverse proxy server can offload work such as serving static content, caching requests, compressing requests, and SSL termination from the HTTP server. A reverse proxy server may reside on a dedicated machine or may be deployed alongside an HTTP server.
+Kestrel is great for serving dynamic content from ASP.NET Core. However, the web serving capabilities aren't as feature rich as servers such as IIS, Apache, or Nginx. A reverse proxy server can offload work such as serving static content, caching requests, compressing requests, and HTTPS termination from the HTTP server. A reverse proxy server may reside on a dedicated machine or may be deployed alongside an HTTP server.
 
 For the purposes of this guide, a single instance of Nginx is used. It runs on the same server, alongside the HTTP server. Based on requirements, a different setup may be chosen.
 
@@ -180,7 +180,7 @@ If the app runs on the server but fails to respond over the Internet, check the 
 
 When done testing the app, shut the app down with `Ctrl+C` at the command prompt.
 
-## Monitoring the app
+## Monitor the app
 
 The server is setup to forward requests made to `http://<serveraddress>:80` on to the ASP.NET Core app running on Kestrel at `http://127.0.0.1:5000`. However, Nginx isn't set up to manage the Kestrel process. *systemd* can be used to create a service file to start and monitor the underlying web app. *systemd* is an init system that provides many powerful features for starting, stopping, and managing processes. 
 
@@ -262,7 +262,7 @@ Connection: Keep-Alive
 Transfer-Encoding: chunked
 ```
 
-### Viewing logs
+### View logs
 
 Since the web app using Kestrel is managed using `systemd`, all events and processes are logged to a centralized journal. However, this journal includes all entries for all services and processes managed by `systemd`. To view the `kestrel-helloapp.service`-specific items, use the following command:
 
@@ -291,13 +291,25 @@ To configure data protection to persist and encrypt the key ring, see:
 * <xref:security/data-protection/implementation/key-storage-providers>
 * <xref:security/data-protection/implementation/key-encryption-at-rest>
 
-## Securing the app
+## Long request header fields
+
+If the app requires request header fields longer than permitted by the proxy server's default settings (typically 4K or 8K depending on the platform), the following directives require adjustment. The values to apply are scenario-dependent. For more information, see your server's documentation.
+
+* [proxy_buffer_size](https://nginx.org/docs/http/ngx_http_proxy_module.html#proxy_buffer_size)
+* [proxy_buffers](https://nginx.org/docs/http/ngx_http_proxy_module.html#proxy_buffers)
+* [proxy_busy_buffers_size](https://nginx.org/docs/http/ngx_http_proxy_module.html#proxy_busy_buffers_size)
+* [large_client_header_buffers](https://nginx.org/docs/http/ngx_http_core_module.html#large_client_header_buffers)
+
+> [!WARNING]
+> Don't increase the default values of proxy buffers unless necessary. Increasing these values increases the risk of buffer overrun (overflow) and Denial of Service (DoS) attacks by malicious users.
+
+## Secure the app
 
 ### Enable AppArmor
 
 Linux Security Modules (LSM) is a framework that's part of the Linux kernel since Linux 2.6. LSM supports different implementations of security modules. [AppArmor](https://wiki.ubuntu.com/AppArmor) is a LSM that implements a Mandatory Access Control system which allows confining the program to a limited set of resources. Ensure AppArmor is enabled and properly configured.
 
-### Configuring the firewall
+### Configure the firewall
 
 Close off all external ports that are not in use. Uncomplicated firewall (ufw) provides a front end for `iptables` by providing a command line interface for configuring the firewall.
 
@@ -316,7 +328,7 @@ sudo ufw allow 443/tcp
 sudo ufw enable
 ```
 
-### Securing Nginx
+### Secure Nginx
 
 #### Change the Nginx response name
 
@@ -331,7 +343,7 @@ static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 
 Configure the server with additional required modules. Consider using a web app firewall, such as [ModSecurity](https://www.modsecurity.org/), to harden the app.
 
-#### Configure SSL
+#### HTTPS configuration
 
 * Configure the server to listen to HTTPS traffic on port `443` by specifying a valid certificate issued by a trusted Certificate Authority (CA).
 
@@ -339,7 +351,7 @@ Configure the server with additional required modules. Consider using a web app 
 
 * Adding an `HTTP Strict-Transport-Security` (HSTS) header ensures all subsequent requests made by the client are over HTTPS.
 
-* Don't add the HSTS header or chose an appropriate `max-age` if SSL will be disabled in the future.
+* Don't add the HSTS header or chose an appropriate `max-age` if HTTPS will be disabled in the future.
 
 Add the */etc/nginx/proxy.conf* configuration file:
 
@@ -381,5 +393,6 @@ Add the line `add_header X-Content-Type-Options "nosniff";` and save the file, t
 
 * [Prerequisites for .NET Core on Linux](/dotnet/core/linux-prerequisites)
 * [Nginx: Binary Releases: Official Debian/Ubuntu packages](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)
-* [Configure ASP.NET Core to work with proxy servers and load balancers](xref:host-and-deploy/proxy-load-balancer)
+* <xref:test/troubleshoot>
+* <xref:host-and-deploy/proxy-load-balancer>
 * [NGINX: Using the Forwarded header](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)

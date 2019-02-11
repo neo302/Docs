@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/older-versions/scaleout-with-sql-server
 title: "SignalR Scaleout with SQL Server (SignalR 1.x) | Microsoft Docs"
-author: MikeWasson
+author: bradygaster
 description: ""
-ms.author: riande
+ms.author: bradyg
 ms.date: 05/01/2013
 ms.assetid: 1dca7967-8296-444a-9533-837eb284e78c
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-sql-server
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 SignalR Scaleout with SQL Server (SignalR 1.x)
 ====================
 by [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 In this tutorial, you will use SQL Server to distribute messages across a SignalR application that is deployed in two separate IIS instances. You can also run this tutorial on a single test machine, but to get the full effect, you need to deploy the SignalR application to two or more servers. You must also install SQL Server on one of the servers, or on a separate dedicated server. Another option is to run the tutorial using VMs on Azure.
 

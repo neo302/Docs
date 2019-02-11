@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 title: "Unit Testing SignalR Applications | Microsoft Docs"
-author: pfletcher
+author: bradygaster
 description: "This article describes how to use the Unit Testing features of SignalR 2.0."
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: d1983524-e0d5-4ee6-9d87-1f552f7cb964
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 Unit Testing SignalR Applications
 ====================
 by [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > This article describes using the Unit Testing features of SignalR 2.
 >

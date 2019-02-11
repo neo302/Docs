@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/guide-to-the-api/working-with-groups
 title: "Working with Groups in SignalR | Microsoft Docs"
-author: pfletcher
+author: bradygaster
 description: "This topic describes how to persist group membership information with the Hub API."
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: cd378ecd-3e9e-4236-b902-65916d85a048
 msc.legacyurl: /signalr/overview/guide-to-the-api/working-with-groups
@@ -12,6 +12,8 @@ msc.type: authoredcontent
 Working with Groups in SignalR
 ====================
 by [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > This topic describes how to add users to groups and persist group membership information.
 >
@@ -31,7 +33,6 @@ by [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://gi
 > ## Questions and comments
 >
 > Please leave feedback on how you liked this tutorial and what we could improve in the comments at the bottom of the page. If you have questions that are not directly related to the tutorial, you can post them to the [ASP.NET SignalR forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) or [StackOverflow.com](http://stackoverflow.com/).
-
 
 ## Overview
 

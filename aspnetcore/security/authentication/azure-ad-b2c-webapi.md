@@ -1,13 +1,13 @@
 ---
-title: Cloud authentication in web APIs with Azure Active Directory B2C in ASP.NET Core
+title: Authentication in web APIs with Azure Active Directory B2C in ASP.NET Core
 author: camsoper
 description: Discover how to set up Azure Active Directory B2C authentication with ASP.NET Core Web API. Test the authenticated web API with Postman.
 ms.author: casoper
 ms.date: 09/21/2018
-ms.custom: mvc
+ms.custom: "mvc, seodec18"
 uid: security/authentication/azure-ad-b2c-webapi
 ---
-# Cloud authentication in web APIs with Azure Active Directory B2C in ASP.NET Core
+# Authentication in web APIs with Azure Active Directory B2C in ASP.NET Core
 
 By [Cam Soper](https://twitter.com/camsoper)
 
@@ -151,8 +151,8 @@ To verify that the web API requires authentication, first make a request without
     ![401 unauthorized response](./azure-ad-b2c-webapi/postman-401-status.png)
 
 > [!IMPORTANT]
-> If you get a "Could not get any response" error, you may need to disable SSL certificate verification in the [Postman settings](https://learning.getpostman.com/docs/postman/launching_postman/settings). 
- 
+> If you receive a "Could not get any response" error, you may need to disable SSL certificate verification in the [Postman settings](https://learning.getpostman.com/docs/postman/launching_postman/settings).
+
 ### Obtain a bearer token
 
 To make an authenticated request to the web API, a bearer token is required. Postman makes it easy to sign in to the Azure AD B2C tenant and obtain a token.

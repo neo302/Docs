@@ -3,7 +3,7 @@ title: Use multiple environments in ASP.NET Core
 author: rick-anderson
 description: Learn how to control app behavior across multiple environments in ASP.NET Core apps.
 ms.author: riande
-ms.date: 07/03/2018
+ms.date: 01/22/2019
 uid: fundamentals/environments
 ---
 # Use multiple environments in ASP.NET Core
@@ -105,9 +105,9 @@ The following JSON shows three profiles from a *launchSettings.json* file:
 
 When the app is launched with [dotnet run](/dotnet/core/tools/dotnet-run), the first profile with `"commandName": "Project"` is used. The value of `commandName` specifies the web server to launch. `commandName` can be any one of the following:
 
-* IIS Express
-* IIS
-* Project (which launches Kestrel)
+* `IISExpress`
+* `IIS`
+* `Project` (which launches Kestrel)
 
 When an app is launched with [dotnet run](/dotnet/core/tools/dotnet-run):
 
@@ -231,6 +231,20 @@ When the `ASPNETCORE_ENVIRONMENT` environment variable is set globally, it takes
 **web.config**
 
 To set the `ASPNETCORE_ENVIRONMENT` environment variable with *web.config*, see the *Setting environment variables* section of <xref:host-and-deploy/aspnet-core-module#setting-environment-variables>. When the `ASPNETCORE_ENVIRONMENT` environment variable is set with *web.config*, its value overrides a setting at the system level.
+
+::: moniker range=">= aspnetcore-2.2"
+
+**Project file or publish profile**
+
+**For Windows IIS deployments:** Include the `<EnvironmentName>` property in the publish profile (*.pubxml*) or project file. This approach sets the environment in *web.config* when the project is published:
+
+```xml
+<PropertyGroup>
+  <EnvironmentName>Development</EnvironmentName>
+</PropertyGroup>
+```
+
+::: moniker-end
 
 **Per IIS Application Pool**
 
